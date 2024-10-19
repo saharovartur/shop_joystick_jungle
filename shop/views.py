@@ -13,10 +13,10 @@ def product_list(request, category_slug=None):
                                      slug=category_slug)
         products = products.filter(category=category)
     return render(request,
-                  'product/list.html',
+                  'shop/product/list.html',
                   {'category': category,
                    'categories': categories,
-                   'prodcuts': products})
+                   'products': products})
 
 
 def product_detail(request, id, slug):
@@ -25,5 +25,5 @@ def product_detail(request, id, slug):
                                 id=id,
                                 slug=slug,
                                 available=True)
-    return render(request, 'product/detail.html',
+    return render(request, 'shop/product/detail.html',
                   {'product': product})
