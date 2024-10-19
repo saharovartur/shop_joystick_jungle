@@ -4,6 +4,7 @@ from shop.models import Category, Product
 
 
 def product_list(request, category_slug=None):
+    """вью списка товаров"""
     category = None
     categories = Category.objects.all()
     products = Product.objects.filter(available=True)
@@ -18,4 +19,11 @@ def product_list(request, category_slug=None):
                    'prodcuts': products})
 
 
-
+def product_detail(request, id, slug):
+    """вью детальной информации о товаре"""
+    product = get_object_or_404(Product,
+                                id=id,
+                                slug=slug,
+                                available=True)
+    return render(request, 'product/detail.html',
+                  {'product': product})
