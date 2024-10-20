@@ -13,8 +13,13 @@ Frontend: HTML/CSS, SVGBox, Boxicons
 ## Описание функциональности
 
 1. Разработал вывод списка товаров по категориям на главной странице.
-   Разработал блок с категориями товаров:
+   1.1 Разработал блок с категориями товаров:
    ![image](https://github.com/user-attachments/assets/ea84b521-d915-4ec6-8af4-25a403c7ea52)
+   1.2 Разработал страницу с карточкой товара:
+   ![image](https://github.com/user-attachments/assets/2273fcef-d121-40a5-a0d5-95f6f1ac9673)
+
+   
+   
 
 
 
