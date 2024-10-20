@@ -3,13 +3,19 @@ shop_joystick_jungle
 ## Проект Django: shop_joystick_jungle
 Интернет-магазин для геймеров: JoyStick Jungle
 
-Технологии:
-Django: 4.1
-Python: 3.10
+## Технологии:
+Backend: Django: 4.1, Python: 3.10,
 База данных: PostgreSQL
+Frontend: HTML/CSS, SVGBox, Boxicons
+
 
 
 ## Описание функциональности
+
+1. Разработал вывод списка товаров по категориям на главной странице.
+   Разработал блок с категориями товаров:
+   ![image](https://github.com/user-attachments/assets/ea84b521-d915-4ec6-8af4-25a403c7ea52)
+
 
 
 
