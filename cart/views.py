@@ -6,6 +6,11 @@ from cart.forms import CartAddProductForm
 from shop.models import Product
 
 
+def cart_detail(request):
+    cart = Cart(request)
+    return render(request, 'cart/detail.html', {'cart': cart})
+
+
 @require_POST
 def cart_add(request, product_id):
     """
