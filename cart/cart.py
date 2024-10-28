@@ -1,4 +1,8 @@
+from decimal import Decimal
+
 from django.conf import settings
+
+from shop.models import Product
 
 
 class Cart:
@@ -42,6 +46,35 @@ class Cart:
     def save(self):
         self.session.modified = True  # Помечаем сеанс как "измененный"
                                       # чтобы обеспечить его сохранение
+
+    def remove(self, product) -> None:
+        """
+        Удаление товара из корзины
+
+        :param product: объект товара
+        :return: None
+        """
+        product_id = str(product.id)
+        if product_id in self.cart:
+            del self.cart[product_id]
+            self.save()
+
+    def __iter__(self):
+        """
+        Прокрутить товары в корзине в цикле
+        и получить товары из базы данных
+        """
+        product_ids = self.cart.keys()  # Получаем ключи словаря корзины
+        products = Product.object.filter(id__in=product_ids)  # Получить объекты product и добавить их в корзину
+        cart = self.cart.copy()
+
+        for product in products:
+            cart[str(product.id)]['product'] = product
+
+        for item in cart.values():
+            item['price'] = Decimal(item['price'])
+            item['total_price'] = item['price'] * item['quantity']
+            yield item
 
 
 
