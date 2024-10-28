@@ -51,7 +51,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [BASE_DIR, 'templates',
-                 BASE_DIR, 'templates/shop/product',],
+                 BASE_DIR, 'templates/shop/product',
+                 BASE_DIR, 'templates/cart',],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
