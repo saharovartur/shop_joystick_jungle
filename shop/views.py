@@ -4,7 +4,7 @@ from django.shortcuts import render, get_object_or_404
 from shop.models import Category, Product
 
 
-@login_required
+
 def product_list(request, category_slug=None):
     """вью списка товаров"""
     category = None
@@ -21,7 +21,7 @@ def product_list(request, category_slug=None):
                    'products': products})
 
 
-@login_required
+
 def product_detail(request, id, slug):
     """вью детальной информации о товаре"""
     product = get_object_or_404(Product,
