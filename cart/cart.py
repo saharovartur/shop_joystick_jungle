@@ -1,8 +1,8 @@
 from decimal import Decimal
-
 from django.conf import settings
-
 from shop.models import Product
+
+# Класс для управления корзиной
 
 
 class Cart:
@@ -76,5 +76,28 @@ class Cart:
             item['total_price'] = item['price'] * item['quantity']
             yield item
 
+    def __len__(self):
+        """
+        Подсчет кол-ва товаров в корзине
+
+        :return: кол-во товаров в корзине
+        """
+        return sum(item['quantity'] for item in self.cart.values())
+
+    def get_total_price(self):
+        """
+        Общая стоимость товаров в корзине
+
+        :return: общая стоимость покупки
+        """
+        return sum(Decimal(item['price']) * item['quantity']
+                   for item in self.cart.values())
+
+    def clear(self):
+        """
+        Удаление корзины из сессии
+        """
+        del self.session[settings.CART_SESSION_ID]
+        self.save()
 
 
