@@ -21,7 +21,7 @@ a:hover {
 
 a.button, input[type="submit"] {
     color:#fff;
-    background:#5993bb;
+    background:black;
     border-radius:4px;
     padding:10px 20px;
     font-size:14px;
@@ -29,7 +29,7 @@ a.button, input[type="submit"] {
 }
 
 a.button.light {
-    color:#666;
+    color:black;
     background:#ededed;
 }
 
@@ -39,6 +39,7 @@ a.button.light {
 
 .text-right {
     text-align:right;
+
 }
 
 table {
@@ -49,22 +50,22 @@ table {
 
 table th, table td {
     text-align:left;
-    font-size:14px;
+    font-size:16px;
     padding:10px;
     margin:0;
 }
 
 tbody tr:nth-child(odd) {
-    background:#efefef;
+    background:#ededed;
 }
 
 tbody tr.subtotal {
-    background:#ccc;
+    background:pink;
 }
 
 thead th, tbody tr.total {
-    background:#5993bb;
-    color:#fff;
+    background:black;
+    color:pink;
     font-weight:bold;
 }
 
@@ -83,6 +84,8 @@ tbody td.num {
 td input[type="submit"] {
     font-size:12px;
     padding:4px 10px;
+    color:pink;
+
 }
 
 form p label, form p input {
@@ -326,6 +329,9 @@ ul.errorlist {
 .recommendations.cart img {
     width:120px;
 }
+
+
+
 
 /* braintree hosted fields */
 form div.field {
