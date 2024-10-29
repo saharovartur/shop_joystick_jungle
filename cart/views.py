@@ -7,7 +7,15 @@ from shop.models import Product
 
 
 def cart_detail(request):
+    """
+    Вью корзины
+    """
     cart = Cart(request)
+    for item in cart:
+        item['update_quantity_form'] = CartAddProductForm(initial={
+            'quantity': item['quantity'],
+            'override': True})
+
     return render(request, 'cart/detail.html', {'cart': cart})
 
 
