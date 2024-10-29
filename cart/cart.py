@@ -26,7 +26,7 @@ class Cart:
         Добавляет продукт в корзину или обновляет существующий продукт.
 
         :param product: объект товара
-        :param quantity: кол-во товара (по умолчанию - 1)
+        :param quantity: кол-во товара (по умолчанию:  1)
         :param override_quantity: Перезаписать кол-во товара
         :return: None
         """
@@ -65,7 +65,7 @@ class Cart:
         и получить товары из базы данных
         """
         product_ids = self.cart.keys()  # Получаем ключи словаря корзины
-        products = Product.object.filter(id__in=product_ids)  # Получить объекты product и добавить их в корзину
+        products = Product.objects.filter(id__in=product_ids)  # Получить объекты product и добавить их в корзину
         cart = self.cart.copy()
 
         for product in products:
