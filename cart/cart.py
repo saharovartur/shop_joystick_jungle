@@ -14,7 +14,9 @@ class Cart:
         """
 
         self.session = request.session
-        cart = self.session.get(settings.CART_SESSION_ID)  # Получаем корзину из текущего сеанса
+        cart = self.session.get(
+            settings.CART_SESSION_ID
+        )  # Получаем корзину из текущего сеанса
 
         if not cart:
             # сохранить пустую корзину в сеансе
@@ -31,21 +33,20 @@ class Cart:
         :return: None
         """
         product_id = str(product.id)  # конвертируем в str из-за особенностей работы
-                                      # сериализации сеансовых данных через JSON
+        # сериализации сеансовых данных через JSON
         if product_id not in self.cart:
-            self.cart[product_id] = {'quantity': 0,
-                                     'price': str(product.price)}
+            self.cart[product_id] = {"quantity": 0, "price": str(product.price)}
 
         if override_quantity:
-            self.cart[product_id]['quantity'] = quantity
+            self.cart[product_id]["quantity"] = quantity
 
         else:
-            self.cart[product_id]['quantity'] += quantity
+            self.cart[product_id]["quantity"] += quantity
         self.save()
 
     def save(self):
         self.session.modified = True  # Помечаем сеанс как "измененный"
-                                      # чтобы обеспечить его сохранение
+        # чтобы обеспечить его сохранение
 
     def remove(self, product) -> None:
         """
@@ -65,15 +66,17 @@ class Cart:
         и получить товары из базы данных
         """
         product_ids = self.cart.keys()  # Получаем ключи словаря корзины
-        products = Product.objects.filter(id__in=product_ids)  # Получить объекты product и добавить их в корзину
+        products = Product.objects.filter(
+            id__in=product_ids
+        )  # Получить объекты product и добавить их в корзину
         cart = self.cart.copy()
 
         for product in products:
-            cart[str(product.id)]['product'] = product
+            cart[str(product.id)]["product"] = product
 
         for item in cart.values():
-            item['price'] = Decimal(item['price'])
-            item['total_price'] = item['price'] * item['quantity']
+            item["price"] = Decimal(item["price"])
+            item["total_price"] = item["price"] * item["quantity"]
             yield item
 
     def __len__(self):
@@ -82,7 +85,7 @@ class Cart:
 
         :return: кол-во товаров в корзине
         """
-        return sum(item['quantity'] for item in self.cart.values())
+        return sum(item["quantity"] for item in self.cart.values())
 
     def get_total_price(self):
         """
@@ -90,8 +93,9 @@ class Cart:
 
         :return: общая стоимость покупки
         """
-        return sum(Decimal(item['price']) * item['quantity']
-                   for item in self.cart.values())
+        return sum(
+            Decimal(item["price"]) * item["quantity"] for item in self.cart.values()
+        )
 
     def clear(self):
         """
@@ -99,5 +103,3 @@ class Cart:
         """
         del self.session[settings.CART_SESSION_ID]
         self.save()
-
-

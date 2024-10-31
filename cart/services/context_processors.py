@@ -5,4 +5,4 @@ def cart(request):
     """
     Процессор контекста для корзины
     """
-    return {'cart': Cart(request)}
+    return {"cart": Cart(request)}
