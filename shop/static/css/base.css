@@ -241,16 +241,16 @@ ul.errorlist {
 }
 
 .order-info {
-    float:right;
+    float:center;
     width:300px;
     background:#efefef;
-    padding:10px 20px;
+    padding:10px 10px;
     color:#333;
-    border-bottom:4px solid #5993bb;
+    border-bottom:10px solid #efefef;
 }
 
 .order-info h3 {
-    color:#5993bb;
+    color:black;
 }
 
 .order-info ul li {
@@ -261,12 +261,18 @@ ul.errorlist {
 
 .order-info p {
     font-weight:bold;
-    float:right;
+    float:center;
 }
 
 .order-info span {
-    float:right;
+    float:center;
 }
+
+.order-info p:last-child {
+    border-bottom: 6px solid black;
+}
+
+
 
 .neg {
     color:#dc1616;
