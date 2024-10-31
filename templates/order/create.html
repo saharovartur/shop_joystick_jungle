@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block title %}
-<h1>Заказ</h1>
+Заказ
 {% endblock %}
 
 {% block content %}
@@ -10,13 +10,13 @@
     <ul>
         {% for item in cart %}
         <li>
-            {{ item.quantity }} {{ item.product.name }}
+            {{ item.quantity }} шт {{ item.product.name }}
             <span>{{ item.total_price }}</span>
         </li>
         {% endfor %}
     </ul>
-    <p>Итого: {{ cart.get_total_price }}</p>
 </div>
+<div class="order-info p:last-child"><p>Итого: {{ cart.get_total_price }}</p></div>
 
 <form method="post" class="order-form">
     {{ form.as_p }}
