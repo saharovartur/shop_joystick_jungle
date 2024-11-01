@@ -4,8 +4,8 @@ shop_joystick_jungle
 Интернет-магазин для геймеров: JoyStick Jungle
 
 ## Технологии:
-Backend: Django: 4.1, Python: 3.10,
-База данных: PostgreSQL
+Backend: Django: 4.1, Python: 3.10, Celery, RabbitMQ, Flower
+База данных: PostgreSQL, 
 Frontend: HTML/CSS, SVGBox, Boxicons
 
 
