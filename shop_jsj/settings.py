@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     "shop.apps.ShopConfig",
     "cart.apps.CartConfig",
     "orders.apps.OrdersConfig",
+    "payment.apps.PaymentConfig",
 ]
 
 MIDDLEWARE = [
@@ -139,3 +140,9 @@ CART_SESSION_ID = "cart"
 
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+
+# Настроечный параметр Stripe для тестовых платежей
+STRIPE_PUBLISHABLE_KEY = str(os.getenv("STRIPE_PUBLISHABLE_KEY"))
+STRIPE_SECRET_KEY = str(os.getenv("STRIPE_SECRET_KEY"))
+STRIPE_API_VERSION = str(os.getenv("STRIPE_API_VERSION"))
