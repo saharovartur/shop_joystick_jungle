@@ -6,7 +6,7 @@ shop_joystick_jungle
 ## Технологии:
 Backend: Django: 4.1, Python: 3.10, Celery, RabbitMQ, Flower
 База данных: PostgreSQL, 
-Frontend: HTML/CSS, SVGBox, Boxicons
+Frontend: HTML/CSS, SVGBox, Boxicons, Pay: Stripe
 
 
 
