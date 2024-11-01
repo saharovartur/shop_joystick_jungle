@@ -15,14 +15,14 @@
       <div class="cart">
         {% with total_items=cart|length %}
           {% if total_items > 0 %}
-            Корзина покупок:
-            <a href="{% url 'cart:cart_detail' %}">
-              {{ total_items }} шт,
-              {{ cart.get_total_price }}₽
-            </a>
+          <a href="{% url 'cart:cart_detail' %}">
+          <span class="badge">
+          <i class="fa fa-shopping-cart fa-lg"></i>
+          {{ total_items }}</span></a>
           {% elif not order %}
-        <div class='highlight'>
-            Ваша корзина пуста.
+        <div>
+        <span class="badge">
+          <i class="fa fa-shopping-cart fa-lg"></i></span>
         </div>
           {% endif %}
         {% endwith %}
