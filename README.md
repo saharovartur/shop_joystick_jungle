@@ -6,7 +6,7 @@ shop_joystick_jungle
 ## Технологии:
 Backend: Django: 4.1, Python: 3.10, Celery, RabbitMQ, Flower
 База данных: PostgreSQL, 
-Frontend: HTML/CSS, SVGBox, Boxicons
+Frontend: HTML/CSS, SVGBox, Boxicons, Pay: Stripe
 
 
 
@@ -21,6 +21,12 @@ Frontend: HTML/CSS, SVGBox, Boxicons
 2. Разработал корзину товаров. Товары можно добавлять в корзину с помощью кнопки на странице карточки с товаром.
 
 3. Разработана возможность оформить заказ заполнив форму, данные о заказах хранятся в БД. Асинхронно отправляется уведомление на почту о совершенном заказе.
+4. Разработана возможность оплатить заказ, настроена интеграция с Stripe(https://stripe.com/)
+   1. Страница заказа --> страница подтверждения оплаты --> ввод данных карты:
+      ![image](https://github.com/user-attachments/assets/dca2c7e4-65ee-4cbf-930f-1b234715d9c0)
+      --> страница об успехе или отказе. 
+Настроки stripe локализованы под рубли. 
+
 
    
    
