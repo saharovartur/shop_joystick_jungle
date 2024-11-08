@@ -49,8 +49,5 @@ def admin_order_pdf(request, order_id):
     html = render_to_string("order/pdf.html", {"order": order})
     response = HttpResponse(content_type="application/pdf")
     response["Content-Disposition"] = f"filename=order_{order.id}.pdf"
-    pisa_status = pisa.CreatePDF(
-        html, response
-    )  # stylesheets=[(settings.STATIC_ROOT / "css/pdf.css")]
-
+    pisa_status = pisa.CreatePDF(html, response)
     return response
