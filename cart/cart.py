@@ -1,6 +1,10 @@
 from decimal import Decimal
+
 from django.conf import settings
+
+from coupons.models import Coupon
 from shop.models import Product
+
 
 # Класс для управления корзиной
 
@@ -22,6 +26,9 @@ class Cart:
             # сохранить пустую корзину в сеансе
             cart = self.session[settings.CART_SESSION_ID] = {}
         self.cart = cart
+        self.coupon_id = self.session.get(
+            "coupon_id"
+        )  # Сохранить текущий примененный купон
 
     def add(self, product, quantity: int = 1, override_quantity: bool = False) -> None:
         """
@@ -103,3 +110,12 @@ class Cart:
         """
         del self.session[settings.CART_SESSION_ID]
         self.save()
+
+    @property
+    def coupon(self):
+        if self.coupon_id:
+            try:
+                return Coupon.objects.get(id=self.coupon_id)
+            except Coupon.DoesNotExist:
+                pass
+        return None
