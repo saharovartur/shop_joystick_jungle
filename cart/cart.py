@@ -139,6 +139,3 @@ class Cart:
         :return: int
         """
         return self.get_total_price() - self.get_discount()
-
-
-
