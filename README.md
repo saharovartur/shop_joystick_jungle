@@ -10,7 +10,7 @@ Backend: Django: 4.1;
 Python: 3.10; Celery; RabbitMQ; Flower.
 База данных: PostgreSQL.
 Frontend: HTML/CSS; SVGBox; Boxicons.
-Pay: Stripe
+Pay: Stripe.
 
 ## Описание функциональности
 
