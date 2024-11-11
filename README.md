@@ -6,9 +6,11 @@ shop_joystick_jungle
 
 ## Технологии:
 
-Backend: Django: 4.1, Python: 3.10, Celery, RabbitMQ, Flower
-База данных: PostgreSQL,
-Frontend: HTML/CSS, SVGBox, Boxicons, Pay: Stripe
+Backend: Django: 4.1;
+Python: 3.10; Celery; RabbitMQ; Flower.
+База данных: PostgreSQL.
+Frontend: HTML/CSS; SVGBox; Boxicons.
+Pay: Stripe
 
 ## Описание функциональности
 
@@ -30,15 +32,16 @@ Frontend: HTML/CSS, SVGBox, Boxicons, Pay: Stripe
     2. Разработан веб-хук для изменения статуса заказа на "оплачен" если оплата была успешно совершена.
 5. Доработана админская часть: добавлена возможность просмотра деталей заказа на отдельной странице + выгрузка
    счет-фактуры в формате PDF.
+6. Разработана функциональность промо-кодов. Покупатели могут применить промо-код к заказу и получить скидку.
 
 ## Установка
 
-1.Клонируйте репозиторий.
-2.Перейдите в директорию проекта.
-3.Установки зависимости: pip install -r requirements.txt
-4.Настройте базу данных в файле settings.py.
-5.Выполните миграции: py manage.py makemigrations > python manage.py migrate
-6.Запустите сервер: py manage.py runserver
+1.Клонируйте репозиторий;
+2.Перейдите в директорию проекта;
+3.Установки зависимости: pip install -r requirements.txt ;
+4.Настройте базу данных в файле settings.py ;
+5.Выполните миграции: py manage.py makemigrations > python manage.py migrate ;
+6.Запустите сервер: py manage.py runserver .
 
 ## Настройка окружения
 
