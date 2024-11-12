@@ -39,6 +39,10 @@ INSTALLED_APPS = [
     "orders.apps.OrdersConfig",
     "payment.apps.PaymentConfig",
     "coupons.apps.CouponsConfig",
+    # 3ds
+    "rosetta",
+    "parler",
+    "localflavor",
 ]
 
 MIDDLEWARE = [
@@ -178,3 +182,15 @@ STRIPE_WEBHOOK_SECRET = str(os.getenv("STRIPE_WEBHOOK_SECRET"))
 REDIS_HOST = "localhost"
 REDIS_PORT = "6379"
 REDIS_DB = 1
+
+#  Настройки django-parler
+PARLER_LANGUAGES = {
+    None: (
+        {"code": "en"},
+        {"code": "es"},
+    ),
+    "default": {
+        "fallback": "en",
+        "hide_untranslated": False,
+    },
+}
