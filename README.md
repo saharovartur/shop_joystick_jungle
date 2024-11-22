@@ -6,11 +6,16 @@ shop_joystick_jungle
 
 ## Технологии:
 
-Backend: Django: 4.1;
-Python: 3.10; Celery; RabbitMQ; Flower; Redis.
-База данных: PostgreSQL.
-Frontend: HTML/CSS; SVGBox; Boxicons.
-Pay: Stripe.
+1. Python: 3.10;
+2. Django: 4.1;
+
+3. Celery;
+4. RabbitMQ;
+5. Flower;
+6. Redis.
+7. PostgreSQL.
+8. HTML / CSS, SVGBox, Boxicons
+9. Stripe
 
 ## Описание функциональности
 
@@ -38,12 +43,12 @@ Pay: Stripe.
 
 ## Установка
 
-1.Клонируйте репозиторий;
-2.Перейдите в директорию проекта;
-3.Установки зависимости: pip install -r requirements.txt ;
-4.Настройте базу данных в файле settings.py ;
-5.Выполните миграции: py manage.py makemigrations > python manage.py migrate ;
-6.Запустите сервер: py manage.py runserver .
+1. Клонируйте репозиторий;
+2. Перейдите в директорию проекта;
+3. Установки зависимости: pip install -r requirements.txt ;
+4. Настройте базу данных в файле settings.py ;
+5. Выполните миграции: py manage.py makemigrations > python manage.py migrate ;
+6. Запустите сервер: py manage.py runserver .
 
 ## Настройка окружения
 
@@ -55,5 +60,5 @@ Pay: Stripe.
 
 ## Контакты
 
-Разработчик: Артур Сахаров
-Telegram: grizz_dev
+1. Разработчик: Артур Сахаров
+2. Telegram: grizz_dev
