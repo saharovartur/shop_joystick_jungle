@@ -2,18 +2,17 @@ shop_joystick_jungle
 
 ## Проект Django: shop_joystick_jungle
 
-Интернет-магазин для геймеров: JoyStick Jungle
+Интернет-магазин JoyStick Jungle
 
 ## Технологии:
 
-1. Python: 3.10;
-2. Django: 4.1;
-
-3. Celery;
-4. RabbitMQ;
-5. Flower;
-6. Redis.
-7. PostgreSQL.
+1. Python: 3.10
+2. Django: 4.1
+3. Celery
+4. RabbitMQ
+5. Flower
+6. Redis
+7. PostgreSQL
 8. HTML / CSS, SVGBox, Boxicons
 9. Stripe
 
