@@ -4,7 +4,7 @@ shop_joystick_jungle
 
 Интернет-магазин JoyStick Jungle
 
-## Технологии:
+## Технологии
 
 1. Python: 3.10
 2. Django: 4.1
